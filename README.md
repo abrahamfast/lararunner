@@ -16,3 +16,12 @@ On Production:
 ```shell
 $ composer install --optimize-autoloader --no-dev
 ```
+
+## About Lararunner
+
+Lararunner Base on Laravel framework and advance packages
+
+
+## License
+
+Is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
