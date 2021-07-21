@@ -16,7 +16,11 @@ On Production:
 ```shell
 $ composer install --optimize-autoloader --no-dev
 ```
-
+## Api Authorization
+Set header
+```html
+Authorization : Bearer {userToken}
+```
 ## Register
 ## User
 ## Login
