@@ -1,8 +1,8 @@
 # Lararunner 
-A way to run fast in Laravel Starter
+A way to run fast in Laravel Starter.
 
 
-### How to build
+### Start with 3 steps 
 
 Assuming you have *php* and *composer* installed.
 
@@ -16,6 +16,27 @@ On Production:
 ```shell
 $ composer install --optimize-autoloader --no-dev
 ```
+
+## Register
+## User
+## Login
+route: ```/api/auth/token```<br>
+method: ```POST``` <br>
+payload:
+```
+email: 'example@email.com',
+password: 'secret',
+device_name: 'any'
+```
+
+response:
+```json
+{
+    "token": "8|OH1E7M72It5V3oMs8EGp2VrJVGyZg5XpXL3vaYr0"
+}
+```
+
+
 
 ## About Lararunner
 
