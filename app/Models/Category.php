@@ -9,7 +9,7 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $table = "menucatgory_main";
+    protected $table = "menucatagory_main";
 
     public function menu()
     {
