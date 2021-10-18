@@ -10,7 +10,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/user/register', function(Request $request){
     $data = $request->all();
-
+    $data['password'] = hash::make($data['password']);
     $user = App\Models\User::create($data);
 
     return $user->createToken($request->device_name)->plainTextToken;
@@ -21,7 +21,6 @@ Route::post('/user/login', function(Request $request){
 
     $user = App\Models\User::where('email', $dataJson->get('email'))->first();
 
-    dd($request->password, $user->password);
 
     if (! $user || ! Hash::check($request->password, $user->password)) {
         throw ValidationException::withMessages([
