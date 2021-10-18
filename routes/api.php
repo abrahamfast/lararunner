@@ -36,8 +36,8 @@ Route::get('/resturant', function(Request $request){
     $resturants = App\Models\Resturant::all();
 
     $resturants->map(function($item){
-        $item->cover = "https://france.pelk.io/storage/restaurant/cover/{$item->cover}";
-        $item->logo = "https://france.pelk.io/storage/restaurant/logo/{$item->main}";
+        $item->cover = "https://france.pelk.io/storage/restaurant/cover/{$item->cover_image}";
+        $item->logo = "https://france.pelk.io/storage/restaurant/logo/{$item->main_image}";
         return $item;
     });
 
