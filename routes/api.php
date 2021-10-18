@@ -45,5 +45,6 @@ Route::get('/resturant', function(Request $request){
 });
 
 Route::get('/resturant/{id}', function(Request $request, $id){
-    return App\Models\Resturant::findOrfail($id);
+    $r = App\Models\Resturant::findOrfail($id);
+    $r->category = $r->category()->get();
 });
