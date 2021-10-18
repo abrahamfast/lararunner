@@ -46,5 +46,15 @@ Route::get('/resturant', function(Request $request){
 
 Route::get('/resturant/{id}', function(Request $request, $id){
     $r = App\Models\Resturant::findOrfail($id);
+    $r->cover = "https://france.pelk.io/storage/restaurant/cover/{$r->cover_image}";
+    $r->logo = "https://france.pelk.io/storage/restaurant/logo/{$r->main_image}";
     $r->category = $r->category()->get();
+    $r->category->map(function($item){
+		$item->icon = "https://france.pelk.io/templates/restro-theme/icons/{$item->icon_png}";
+        $item->menu = $item->menu()->get();
+        $item->menu->map(function($it){
+            $it->image = "https://france.pelk.io/storage/menu/{$it->image}";
+        });
+    });
+    return $r;
 });
