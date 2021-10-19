@@ -58,3 +58,11 @@ Route::get('/resturant/{id}', function(Request $request, $id){
     });
     return $r;
 });
+
+
+Route::get('restaurant/{id}/callwaiter', function($id, Request $request){
+    return App\Models\CallWaiter::create([
+            'table_no' => $request->get('table_no'),
+            'restaurant_id' => $id
+        ]);
+});
