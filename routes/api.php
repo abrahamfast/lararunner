@@ -50,7 +50,7 @@ Route::get('/resturant/{id}', function(Request $request, $id){
     $r->logo = "https://france.pelk.io/storage/restaurant/logo/{$r->main_image}";
     $r->category = $r->category()->get();
     $r->category->map(function($item){
-		$item->icon = "https://france.pelk.io/templates/restro-theme/icons/{$item->icon_png}";
+		$item->icon = "https://france.pelk.io/templates/restro-theme/icons/{$item->icon_png}.png";
         $item->menu = $item->menu()->get();
         $item->menu->map(function($it){
             $it->image = "https://france.pelk.io/storage/menu/{$it->image}";
